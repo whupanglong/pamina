@@ -1,0 +1,19 @@
+{
+  "name": "pamina",
+  "main": "index.html",
+  "window": {
+    "title": "Pamina",
+    "toolbar": false,
+    "icon": "pamina.png",
+    "frame": true,
+    "width": 800,
+    "show": true,
+    "height": 500,
+    "position": "mouse",
+    "min_width": 400,
+    "min_height": 200
+  },
+  "webkit": {
+    "plugin": true
+  }
+}

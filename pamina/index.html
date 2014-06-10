@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8">
+    <title>Pamina  腾讯 互联网无障碍开发平台</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        //这里配置全局变量不错！~
+        SERVER_IP = '127.0.0.1';//服务器的IP地址，现在还木有域名哦
+        SERVER_PORT = 1115;
+
+        UPLOAD_SERVER_IP = '101.226.73.209';
+        UPLOAD_SERVER_PORT = 12005;
+    </script>
+    <script src="lib/codemirror/codemirror.js"></script>
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="lib/codemirror/codemirror.css">
+    <link rel="stylesheet" href="lib/jquery/jquery.alerts.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script src="lib/jquery/jquery.alerts.js"></script>
+    <script src="lib/jquery/jquery.hotkeys.js"></script>
+    <script src="lib/codemirror/xml.js"></script>
+    <script src="lib/codemirror/htmlmixed.js"></script>
+    <script src="lib/codemirror/javascript.js"></script>
+    <script src="lib/codemirror/css.js"></script>
+    <script src="js/main.js"></script>
+    <!--<script src="js/updatelib.js"></script>-->
+
+  </head>
+  <body>
+    <div id="rename_prompt" title="Basic dialog" style="display:none;">
+    <p></p>
+    </div>
+    <input style="display:none;" id="openDialog" type="file" multiple/>
+    <input style="display:none;" id="saveDialog" type="file" nwsaveas />
+    <div id="wrapper">
+      <div id="file-wrapper">
+        <div id="file-nav">
+        </div>
+      </div>
+      <div id="box-wrapper">
+        <div id="default" class="text-box">
+        </div>
+
+        <div id="console-box"></div>
+      </div>
+    </div>
+    <code style='display:none;' id="code-placeholder"></code>
+    <script type='text/javascript' id="box-gen">
+    $(document).ready(function(e){
+        if(localStorage._recent_path){
+            openFile(localStorage._recent_path);
+            console.log(localStorage._recent_path);
+        }else{
+            appendFile('Enter your code here', 'untitled.js', false);
+            $(".file-tab:last").trigger("click");
+        }
+    })
+    </script>
+  </body>
+</html>
